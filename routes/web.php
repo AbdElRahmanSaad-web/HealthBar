@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\MealController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +27,11 @@ Route::get('locale/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-Route::prefix('dashboard')->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [AuthController::class, 'dashboard'])->name('home');
     Route::resource('categories', CategoryController::class);
+    Route::resource('sub_categories', SubCategoryController::class);
+    Route::resource('items', ItemController::class);
+    Route::resource('meals', MealController::class);
 });

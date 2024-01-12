@@ -17,7 +17,8 @@ class CategoryController extends Controller
     }
 
     public function index(){
-        $categories = $this->categoryRepository->all();
+        $categories = $this->categoryRepository->all()->whereNull('category_id');
+        
         return view('dashboard.admin.category.index', compact('categories'));
     }
 

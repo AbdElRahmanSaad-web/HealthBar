@@ -1,15 +1,15 @@
 @extends('dashboard.admin.layouts.app')
 @section('home', '/dashboard')
-@section('subtitle', __('words.categories'))
+@section('subtitle', __('words.sub_categories'))
 @section('button_create')
     <div class="ms-auto">
         <div class="btn-group">
-            <a href="{{ route('categories.create') }}" type="button" class="btn btn-primary">+</a>
+            <a href="{{ route('sub_categories.create') }}" type="button" class="btn btn-primary">+</a>
         </div>
     </div>
 @stop
 @section('content')
-    <h6 class="mb-0 text-uppercase">{{ __('words.categories') }}</h6>
+    <h6 class="mb-0 text-uppercase">{{ __('words.sub_categories') }}</h6>
     <hr />
     <div class="card">
         <div class="card-body">
@@ -21,18 +21,20 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>{{ __('words.categories') }}</th>
+                        <th>{{ __('words.main_category') }}</th>
+                        <th>{{ __('words.sub_category') }}</th>
                         <th>{{ __('words.action') }}</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($categories as $key => $category)
                         <tr>
-                            <td>{{ ++$key }}</td>
+                            <td>{{ $key++ }}</td>
+                            <td>{{ $category->MainCategory->name }}</td>
                             <td>{{ $category->name }}</td>
                             <td>
                                 <a class="btn btn-warning"
-                                href="{{ route('categories.edit', $category->id) }}"><i class="fa-solid fa-pen-to-square"></i></a> 
+                                href="{{ route('sub_categories.edit', $category->id) }}"><i class="fa-solid fa-pen-to-square"></i></a> 
                             </td>
                         </tr>
                     @endforeach

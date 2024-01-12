@@ -31,6 +31,33 @@
                 <li><a href="{{route('categories.index')}}"><i
                             class="bx bx-right-arrow-alt"></i>{{ __('words.categories') }}</a>
                 </li>
+                <li><a href="{{route('sub_categories.index')}}"><i
+                            class="bx bx-right-arrow-alt"></i>{{ __('words.sub_categories') }}</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:" class="has-arrow">
+                <div class="parent-icon"><i class="fa-solid fa-list"></i>
+                </div>
+                <div class="menu-title">{{ __('words.items') }}</div>
+            </a>
+            <ul>
+                <li><a href="{{route('items.index')}}"><i
+                            class="bx bx-right-arrow-alt"></i>{{ __('words.items') }}</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:" class="has-arrow">
+                <div class="parent-icon"><i class="fa-solid fa-list"></i>
+                </div>
+                <div class="menu-title">{{ __('words.meals') }}</div>
+            </a>
+            <ul>
+                <li><a href="{{route('meals.index')}}"><i
+                            class="bx bx-right-arrow-alt"></i>{{ __('words.meals') }}</a>
+                </li>
             </ul>
         </li>
 
