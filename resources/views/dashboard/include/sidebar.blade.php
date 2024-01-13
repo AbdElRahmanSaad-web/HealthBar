@@ -38,7 +38,7 @@
         </li>
         <li>
             <a href="javascript:" class="has-arrow">
-                <div class="parent-icon"><i class="fa-solid fa-list"></i>
+                <div class="parent-icon"><i class="fa-solid fa-utensils"></i>
                 </div>
                 <div class="menu-title">{{ __('words.items') }}</div>
             </a>
@@ -50,7 +50,7 @@
         </li>
         <li>
             <a href="javascript:" class="has-arrow">
-                <div class="parent-icon"><i class="fa-solid fa-list"></i>
+                <div class="parent-icon"><i class="fa-solid fa-bowl-food"></i>
                 </div>
                 <div class="menu-title">{{ __('words.meals') }}</div>
             </a>

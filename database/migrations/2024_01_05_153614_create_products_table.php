@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('actual_price');
+            $table->string('actual_price')->nullable();
             $table->string('displayed_price');
             $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();

@@ -10,63 +10,7 @@
                 <div class="card-body">
                     <!--start -->
                     <div class="row row-cols-1 row-cols-md-3 row-cols-xl-2 row-cols-xxl-4">
-                        <div class="col">
-                            <div class="card radius-10 bg-gradient-cosmic">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-auto">
-                                            <p class="mb-0 text-white">Company Ratio</p>
-                                            <h4 class="my-1 text-white" id="companyRatio">-</h4>
-                                            {{-- <p class="mb-0 font-13 text-white">+{{$orders_last_week}} from last week</p> --}}
-                                        </div>
-                                        {{-- <div id="chart1"></div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card radius-10 bg-gradient-ibiza">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-auto">
-                                            <p class="mb-0 text-white">Number of Scannes</p>
-                                            <h4 class="my-1 text-white" id="scan">-</h4>
-                                            {{-- <p class="mb-0 font-13 text-white">+{{$users_last_week}} from last week</p> --}}
-                                        </div>
-                                        {{-- <div id="chart2"></div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card radius-10 bg-gradient-ohhappiness">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-auto">
-                                            <p class="mb-0 text-white">Money Before Discount</p>
-                                            <h4 class="my-1 text-white" id="priceBeforeDiscount">-</h4>
-                                            {{-- <p class="mb-0 font-13 text-white">+{{$drivers_last_week}} from last week</p> --}}
-                                        </div>
-                                        {{-- <div id="chart3"></div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card radius-10 bg-gradient-cosmic">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-auto">
-                                            <p class="mb-0 text-white">Money After Discount</p>
-                                            <h4 class="my-1 text-white" id="priceAfterDiscount">-</h4>
-                                            {{-- <p class="mb-0 font-13 text-white">+{{$drivers_last_week}} from last week</p> --}}
-                                        </div>
-                                        {{-- <div id="chart3"></div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                       <h1>Health Bar</h1>
                 </div>
             </div>
         </div>

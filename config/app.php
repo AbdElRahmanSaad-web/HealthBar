@@ -170,6 +170,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\AuthRepositoryProvider::class,
         App\Providers\CategoryRepositoryProvider::class,
+        App\Providers\ItemRepositoryProvider::class,
+        App\Providers\MealRepositoryProvider::class,
 
         
     ])->toArray(),

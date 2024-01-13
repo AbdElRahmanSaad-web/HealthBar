@@ -54,12 +54,12 @@ class AuthController extends Controller
         ]);
 
         $loginField = filter_var(request()->input('email'), FILTER_VALIDATE_EMAIL) ? 'email' : 'userName';
-        $admin = User::where('admin', '1')->where('email', $request->email)->where('password', Hash::make($request->password))->first();
-        if(isset($admin)){
+        $admin = User::where('admin', '1')->where('email', $request->email)->first();
+        if ($admin && Hash::check($request->password, $admin->password)) {
             $credentials = $request->only(['email', 'password']);
             return self::adminAuth($credentials, $request) ?? back();
         }
-
+        dd($admin);
         return back();
     }
 

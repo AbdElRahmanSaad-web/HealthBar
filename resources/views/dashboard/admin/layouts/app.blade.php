@@ -211,13 +211,9 @@
 
     $(window).on('load', function () {
         $('.preloader').fadeOut('slow');
-        // $('.wrapper').fadeIn('slow');
         $('.wrapper').removeClass('d-none');
     });
 </script>
 <script src="assets/js/app.js"></script>
 </body>
 </html>
-
-{{--    AIzaSyDF3aj5xiKr4Z9POwAehwPGDed10z3zlUs--}}
-
