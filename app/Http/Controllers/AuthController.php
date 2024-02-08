@@ -59,7 +59,6 @@ class AuthController extends Controller
             $credentials = $request->only(['email', 'password']);
             return self::adminAuth($credentials, $request) ?? back();
         }
-        dd($admin);
         return back();
     }
 
