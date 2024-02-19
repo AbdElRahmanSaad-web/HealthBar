@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ForgetPasswordController;
 use App\Http\Controllers\Api\GetCategoryController;
+use App\Http\Controllers\Api\GetMainCategoryDetailsController;
 use App\Http\Controllers\Api\GetMainDishController;
 use App\Http\Controllers\Api\GetMealsController;
 use App\Http\Controllers\Api\LoginController;
@@ -31,6 +32,8 @@ Route::post('resetPassword', [ResetPasswordController::class, 'index']);
 Route::get('getMeals', [GetMealsController::class, 'index']);
 Route::get('getCategory', [GetCategoryController::class, 'index']);
 Route::get('getMainDish', [GetMainDishController::class, 'index']);
+Route::get('getMainCategoryDetails', [GetMainCategoryDetailsController::class, 'index']);
+// Route::get('MyCart');
 Route::middleware('auth:sanctum')->group(function(){
     // Route::
 });

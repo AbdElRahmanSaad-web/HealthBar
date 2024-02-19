@@ -25,13 +25,13 @@ class ResetPasswordController extends Controller
 
         // Check if the validation fails
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return response()->json(['status' => false,'errors' => $validator->errors()], 422);
         }
 
         $user = User::where('email', $request->email)->where('otp', $request->otp)->first();
 
         if(empty($user)){
-            return response()->json(['message' => 'Otp is Worng']);
+            return response()->json(['status' => false, 'message' => 'Otp is Worng']);
         }
 
         $user->update([
@@ -39,6 +39,7 @@ class ResetPasswordController extends Controller
         ]);
 
         return response()->json([
+            'status' => true,
             'message' => 'Password Changed Successfully',
         ], 200);
     }

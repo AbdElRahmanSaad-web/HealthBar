@@ -19,7 +19,7 @@ class ForgetPasswordController extends Controller
 
         // Check if the validation fails
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return response()->json(['status' => false, 'errors' => $validator->errors()], 422);
         }
 
         // Generate a random OTP (assuming 4 digits)
@@ -33,6 +33,7 @@ class ForgetPasswordController extends Controller
         $user->tokens()->delete();
 
         return response()->json([
+            'status' => true,
             'message' => 'OTP generated successfully',
             'otp' => $otp,
         ], 200);

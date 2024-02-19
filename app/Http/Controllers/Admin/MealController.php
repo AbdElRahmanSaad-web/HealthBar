@@ -43,7 +43,7 @@ class MealController extends Controller
 
         $itemsWithQuantities = [];
         foreach ($request->item as $itemId) {
-            $itemsWithQuantities[$itemId] = ['price' => $price, 'quantity' => $request->quantity];
+            $itemsWithQuantities[$itemId] = ['price' => $price, 'quantity' => $request->unit];
         }
 
         $meal->items()->sync($itemsWithQuantities);
@@ -85,7 +85,7 @@ class MealController extends Controller
 
         $itemsWithQuantities = [];
         foreach ($request->item as $itemId) {
-            $itemsWithQuantities[$itemId] = ['price' => $price, 'quantity' => $request->quantity];
+            $itemsWithQuantities[$itemId] = ['price' => $price, 'quantity' => $request->unit];
         }
 
         $meal->items()->sync($itemsWithQuantities);

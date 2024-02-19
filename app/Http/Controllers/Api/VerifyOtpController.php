@@ -23,16 +23,19 @@ class VerifyOtpController extends Controller
             ]);
         }else if(isset($user->email_verified_at)){
             return response()->json([
+                'status' => true,
                 'message' => 'Your Email is already Verified',
             ], 200);
             
         } else{
             return response()->json([
+                'status' => false,
                 'message' => 'Otp is Wrong',
             ], 422);            
         }
 
         return response()->json([
+            'status' => true,
             'message' => 'User Email Verified Successfully',
             'token' => $user->createToken("API TOKEN")->plainTextToken
         ], 200); 

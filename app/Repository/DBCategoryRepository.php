@@ -11,6 +11,10 @@ class DBCategoryRepository implements CategoryRepositoryInterface {
         return Category::all();
     }
 
+    public function find($param){
+        return Category::find($param);
+    }
+
     public function store($param){
         return Category::create($param);
     }

@@ -18,7 +18,9 @@ class CategoryController extends Controller
     }
 
     public function index(){
-        $categories = $this->categoryRepository->all()->whereNull('category_id');
+        $main_categories = $this->categoryRepository->all();
+
+        $categories = $this->Parent($main_categories)??[];
         
         return view('Dashboard.category.index', compact('categories'));
     }
@@ -43,5 +45,18 @@ class CategoryController extends Controller
         $category = $this->categoryRepository->update($request->all(), $id);
 
         return redirect()->route('admin.categories.index')->with('success', 'Category is Updated Successfully');
+    }
+
+
+    public function Parent($categories){
+        return $categories->reject(function ($category) {
+            return $category->MainCategory()->exists();
+        });
+    }
+
+    public function Child($categories){
+        return $categories->reject(function ($category) {
+            return !$category->MainCategory()->exists();
+        });
     }
 }

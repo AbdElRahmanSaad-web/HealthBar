@@ -77,9 +77,9 @@
                 <li><a href="{{route('admin.categories.index')}}"><i
                             class="bx bx-right-arrow-alt"></i>{{ __('words.categories') }}</a>
                 </li>
-                {{-- <li><a href="{{route('sub_categories.index')}}"><i
+                <li><a href="{{route('admin.sub_categories.index')}}"><i
                             class="bx bx-right-arrow-alt"></i>{{ __('words.sub_categories') }}</a>
-                </li> --}}
+                </li>
             </ul>
         </li>
         <li>

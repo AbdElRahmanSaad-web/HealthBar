@@ -26,6 +26,7 @@ class LoginController extends Controller
             $token = $user->createToken('api_token')->plainTextToken;
 
             return response()->json([
+                'status' => true,
                 'message' => 'Login successfully',
                 'user' => $user,
                 'token' => $token,
@@ -33,6 +34,7 @@ class LoginController extends Controller
         }
 
         return response()->json([
+            'status' => false,
             'message' => 'Invalid credentials',
         ], 401);
     }

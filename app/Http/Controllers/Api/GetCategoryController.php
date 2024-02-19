@@ -16,12 +16,32 @@ class GetCategoryController extends Controller
         $this->categoryRepository = $categoryRepository;
     }
 
-    public function index(){
+    public function index(Request $request){
         $categories = $this->categoryRepository->all();
 
+        if($request->input('type') === 'sub'){
+            $categories = $this->Child($categories);
+        }else{
+            $categories = $this->Parent($categories);
+        }
+
         return response()->json([
+            'status' => true,
             'message' => 'Categories retrieved successfully',
             'categories' => $categories,
         ], 200);
+    }
+
+
+    public function Parent($categories){
+        return $categories->reject(function ($category) {
+            return $category->MainCategory()->exists();
+        });
+    }
+
+    public function Child($categories){
+        return $categories->reject(function ($category) {
+            return !$category->MainCategory()->exists();
+        });
     }
 }

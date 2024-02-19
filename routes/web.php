@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\MealController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Auth\AuthController;
 use App\Http\Controllers\Admin\Home\HomeController;
+use App\Http\Controllers\Admin\SubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +34,9 @@ Route::prefix('admin')->name('admin.')->group( function () {
         Route::post('logout', [AuthController::class, 'logout'])->name('logout');
         Route::get('home', [HomeController::class, 'index'])->name('home');
         Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-        Route::get('/', [AuthController::class, 'dashboard'])->name('home');
+        // Route::get('/', [AuthController::class, 'dashboard'])->name('home');
         Route::resource('categories', CategoryController::class);
+        Route::resource('sub_categories', SubCategoryController::class);
         Route::resource('items', ItemController::class);
         Route::resource('meals', MealController::class);
     });

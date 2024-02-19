@@ -6,6 +6,8 @@ interface CategoryRepositoryInterface{
 
     public function all();
 
+    public function find($param);
+
     public function store($param);
 
     public function edit($id);

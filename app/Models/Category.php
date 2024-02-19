@@ -11,10 +11,16 @@ class Category extends Model
 
     protected $fillable = [
         'name',
-        'category_id'
     ];
 
     public function MainCategory(){
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsToMany(Category::class, 'category_sub_categories', 'category_id', 'sub_category_id');
+    }
+    public function SubCategory(){
+        return $this->belongsToMany(Category::class, 'category_sub_categories','sub_category_id' , 'category_id');
+    }
+
+    public function Meals(){
+        return $this->belongsToMany(Product::class, 'category_products');
     }
 }
