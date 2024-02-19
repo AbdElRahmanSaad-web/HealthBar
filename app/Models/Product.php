@@ -12,10 +12,10 @@ class Product extends Model
 
     public function items()
     {
-        return $this->belongsToMany(Item::class, 'item_products')->withPivot('quantity');
+        return $this->belongsToMany(Item::class, 'item_products')->withPivot('price', 'quantity');
     }
 
-    public function Category(){
-        return $this->belongsTo(Category::class, 'category_id');
+    public function categories(){
+        return $this->belongsToMany(Category::class, 'category_products');
     }
 }

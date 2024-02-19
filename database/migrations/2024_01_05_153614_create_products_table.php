@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('actual_price')->nullable();
             $table->string('displayed_price');
+            $table->string('calories');
             $table->timestamps();
         });
     }
