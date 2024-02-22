@@ -1,5 +1,5 @@
 <x-Admin.template>
-    <x-table title="users" createRoute="{{ route('admin.users.create') }}">
+    <x-table title="users" >
         {{-- <div class="card">
             <div class="card-body"> --}}
                 <div class="table-responsive">
@@ -8,7 +8,7 @@
                             <tr>
                                 <th>name</th>
                                 <th>email</th>
-                                <th>phone</th>
+                                {{-- <th>phone</th> --}}
                                 <th>action</th>
                             </tr>
                         </thead>
@@ -17,11 +17,11 @@
                                 <tr>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone }}</td>
+                                    {{-- <td>{{ $user->phone }}</td> --}}
                                     <td>
-                                        <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-success"><i class="fa-solid fa-eye"></i></a>
+                                        {{-- <a href="{{route('admin.users.show',$user->id)}}" class="btn btn-success"><i class="fa-solid fa-eye"></i></a> --}}
                                     
-                                        <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        {{-- <a href="" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a> --}}
                                     
                                         <form action='{{ route('admin.users.destroy', $user->id) }}' class='d-inline' method="post">
                                             @csrf
@@ -31,7 +31,8 @@
                                             </button>
                                         </form>
                                     
-                                    </td>                                </tr>
+                                    </td>                                
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>

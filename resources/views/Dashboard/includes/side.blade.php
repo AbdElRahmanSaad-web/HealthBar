@@ -28,6 +28,25 @@
                 </li>
             </ul> --}}
         </li>
+
+        {{-- <li>
+            <a href="javascript:" class="">
+                <div class="parent-icon"><i class="bx bx-user"></i>
+                </div>
+                <div class="menu-title">{{ __('words.Users') }}</div>
+            </a>
+           
+        </li> --}}
+    {{-- </li> --}}
+    
+        <li>
+            <a href="{{ route('admin.users.index') }}">
+                <div class="parent-icon"><i class="bx bx-user"></i>
+                </div>
+                <div class="menu-title text-capitalize">{{ __('users') }}</div>
+            </a>
+        </li>
+    {{-- <li> --}}
         {{-- <li class="menu-label">UI Elements</li> --}}
         {{-- <li>
             <a href="{{route('admin.admins.index')}}">
@@ -105,6 +124,11 @@
                             class="bx bx-right-arrow-alt"></i>{{ __('words.meals') }}</a>
                 </li>
             </ul>
+        </li>
+
+        <li>
+            <a class="menu-title text-capitalize" href="{{ route('admin.promoCodes.index') }}"><i
+                 class="fa-solid fa-gift" style="color: #6c757d;"></i>{{ __('words.PromoCodes') }}</a>
         </li>
     </ul>
     <!--end navigation-->

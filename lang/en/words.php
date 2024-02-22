@@ -15,5 +15,6 @@ return [
     'calories' => 'Calories',
     'action' => 'Action',
     'main_category' => 'Main Category',
+    'PromoCodes' => 'Promo Codes',
 ];
 

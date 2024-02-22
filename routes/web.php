@@ -6,7 +6,9 @@ use App\Http\Controllers\Admin\MealController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Auth\AuthController;
 use App\Http\Controllers\Admin\Home\HomeController;
+use App\Http\Controllers\Admin\PromoCodes\PromoCodeController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,14 @@ Route::prefix('admin')->name('admin.')->group( function () {
         Route::resource('sub_categories', SubCategoryController::class);
         Route::resource('items', ItemController::class);
         Route::resource('meals', MealController::class);
+        //Users Routes
+        Route::get('users', [UserController::class,'index'])->name('users.index');
+        Route::get('users/{id}', [UserController::class,'show'])->name('users.show');
+        Route::delete('users/{id}', [UserController::class,'delete'])->name('users.destroy');
+
+        //promoCodes Routes
+        Route::get('promoCodes', [PromoCodeController::class,'index'])->name('promoCodes.index');
+        Route::get('promoCodesCreate', [PromoCodeController::class,'create'])->name('promoCodes.create');
     });
     // Admin Guest Routes
     Route::middleware('guest:admin')->group( function () {
