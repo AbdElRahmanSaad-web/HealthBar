@@ -16,6 +16,12 @@
  <script src="{{ asset('AdminAssets/assets/js/index.js') }}"></script>
  <!--app JS-->
  <script src="{{ asset('AdminAssets/assets/js/app.js') }}"></script>
+
+ {{-- dataTaples --}}
+ <script src="{{asset('AdminAssets/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+ <script src="{{asset('AdminAssets/assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+ {{-- <script src="//cdn.datatables.net/2.0.1/js/dataTables.min.js"></script> --}}
+
  @yield('scripts')
 
  <script>
@@ -27,6 +33,24 @@
          allowClear: Boolean($(this).data('allow-clear')),
      });
  </script>
+
+ <script>
+     $(document).ready(function() {
+         $('#example').DataTable({
+             "bPaginate": false,
+             dom: 'frtip'
+         });
+     });
+
+     $(window).on('load', function() {
+         $('.preloader').fadeOut('slow');
+         // $('.wrapper').fadeIn('slow');
+         $('.wrapper').removeClass('d-none');
+     });
+ </script>
+
+    @stack('scripts')
+
  </body>
 
  </html>

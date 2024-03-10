@@ -47,8 +47,14 @@ Route::prefix('admin')->name('admin.')->group( function () {
         Route::delete('users/{id}', [UserController::class,'delete'])->name('users.destroy');
 
         //promoCodes Routes
-        Route::get('promoCodes', [PromoCodeController::class,'index'])->name('promoCodes.index');
+        // Route::get('promoCodes', [PromoCodeController::class,'index'])->name('promoCodes.index');
+        Route::get('promoCodes', [PromoCodeController::class,'requests_index'])->name('promoCodes.index');
         Route::get('promoCodesCreate', [PromoCodeController::class,'create'])->name('promoCodes.create');
+        Route::post('promoCodes', [PromoCodeController::class,'store'])->name('promoCodes.store');
+
+        Route::get('promoCodes/{id}', [PromoCodeController::class,'edit'])->name('promoCodes.edit');
+        Route::put('promoCodes',[PromoCodeController::class,'update'])->name('promoCodes.update');
+        Route::delete('promoCodesDelete/{id}', [PromoCodeController::class,'delete'])->name('promoCodes.destroy');
     });
     // Admin Guest Routes
     Route::middleware('guest:admin')->group( function () {
@@ -61,3 +67,6 @@ Route::prefix('admin')->name('admin.')->group( function () {
 // Route::get('test', function () {
 //     return view('Admin.Auth.login');
 // });
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

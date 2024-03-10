@@ -8,6 +8,10 @@
 	<!--favicon-->
 	<link rel="icon" href="{{asset('AdminAssets/assets/images/favicon-32x32.png')}}" type="image/png" />
 	<!--plugins-->
+	<link href="{{asset('AdminAssets/assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
+	{{-- <link href="//cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css" rel="stylesheet" crossorigin="anonymous"/>
+	<link href="//cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css" rel="stylesheet" crossorigin="anonymous"/> --}}
+
 	<link href="{{asset('AdminAssets/assets/plugins/notifications/css/lobibox.min.css')}}" rel="stylesheet" />
 	<link href="{{asset('AdminAssets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
 	<link href="{{asset('AdminAssets/assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
