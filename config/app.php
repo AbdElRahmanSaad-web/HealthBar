@@ -172,6 +172,7 @@ return [
         App\Providers\CategoryRepositoryProvider::class,
         App\Providers\ItemRepositoryProvider::class,
         App\Providers\MealRepositoryProvider::class,
+        App\Providers\OrderRepositoryProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
 
         

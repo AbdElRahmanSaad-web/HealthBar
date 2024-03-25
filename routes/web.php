@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\MealController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Auth\AuthController;
 use App\Http\Controllers\Admin\Home\HomeController;
+use App\Http\Controllers\Admin\Order\OrderController;
 use App\Http\Controllers\Admin\PromoCodes\PromoCodeController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\User\UserController;
@@ -55,6 +56,9 @@ Route::prefix('admin')->name('admin.')->group( function () {
         Route::get('promoCodes/{id}', [PromoCodeController::class,'edit'])->name('promoCodes.edit');
         Route::put('promoCodes',[PromoCodeController::class,'update'])->name('promoCodes.update');
         Route::delete('promoCodesDelete/{id}', [PromoCodeController::class,'delete'])->name('promoCodes.destroy');
+
+        //orders Routes
+        Route::get('orders',[OrderController::class,'index'])->name('orders.index');
     });
     // Admin Guest Routes
     Route::middleware('guest:admin')->group( function () {
