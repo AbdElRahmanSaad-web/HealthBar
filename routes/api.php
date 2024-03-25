@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\GetMainDishController;
 use App\Http\Controllers\Api\ResetPasswordController;
 use App\Http\Controllers\Api\ForgetPasswordController;
 use App\Http\Controllers\Api\GetMainCategoryDetailsController;
+use App\Http\Controllers\Api\LogOutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ use App\Http\Controllers\Api\GetMainCategoryDetailsController;
 */
 
 
+
 Route::post('register', [RegisterController::class, 'index']);
 Route::post('verifyOtp', [VerifyOtpController::class, 'index']);
 Route::post('login', [LoginController::class, 'index']);
@@ -37,12 +39,15 @@ Route::get('getMainDish', [GetMainDishController::class, 'index']);
 Route::get('getMainCategoryDetails', [GetMainCategoryDetailsController::class, 'index']);
 // Route::get('MyCart');
 Route::middleware('auth:sanctum')->group(function(){
+    Route::get('login', function(){
+    });
     Route::post('addToCart', [CartController::class, 'addToCart']);
     Route::delete('deleteItem/{id}', [CartController::class, 'deleteItem']);
     Route::put('editToCart/{id}', [CartController::class, 'editToCart']);
     Route::get('getCartDetails', [CartController::class, 'index']);
     Route::post('addAddress', [AddressController::class, 'addAddress']);
     Route::post('checkoutCart', [CartController::class, 'checkoutCart']);
+    Route::post('logOut', [LogOutController::class, 'logOut']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
