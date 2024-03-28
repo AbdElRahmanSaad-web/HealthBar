@@ -20,8 +20,6 @@
 </style>
 
     <x-table title="Orders">
-        {{-- <div class="card">
-            <div class="card-body"> --}}
         <div class="table-responsive">
             <table id="example" class="table table-striped table-bordered w-100">
                 <tr>
@@ -42,7 +40,6 @@
                 </tr>
                 <tr>
                     <th>Status</th>
-                    {{-- <td>{{ $order->status }}</td> --}}
                     <td>
                         <form method="POST" action="{{route('admin.orders.status',$order->id)}}">
                             @csrf
@@ -94,25 +91,6 @@
                 </tr>
             </table>
         </div>
-        {{-- </div>
-        </div> --}}
 
     </x-table>
 </x-Admin.template>
-
-{{--   $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('address_id');
-            $table->timestamp('order_date')->nullable();
-            $table->string('status')->default('pending');
-            $table->decimal('service_price')->nullable();
-            $table->decimal('delivery_price')->nullable();
-            $table->decimal('total_price')->nullable();
-            $table->unsignedBigInteger('promo_code_id')->nullable();
-            $table->decimal('discount')->nullable();
-            $table->decimal('total_price_after_discount')->nullable();
-            $table->text('notes')->nullable();
-            $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('address_id')->references('id')->on('addresses');
-            $table->foreign('promo_code_id')->references('id')->on('promo_codes');
---}}
