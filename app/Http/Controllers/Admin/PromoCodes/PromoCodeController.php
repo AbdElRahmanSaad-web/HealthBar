@@ -12,17 +12,8 @@ class PromoCodeController extends Controller
 {
     public function requests_index(PromoCodeDataTable $dataTable)
     {
-        // dd($dataTable);
         return $dataTable->render('Dashboard.PromoCodes.index');
-        // return $dataTable->render('Dashboard.PromoCodes.index');
     }
-
-    // public function index()
-    // {
-    //     $promoCodes = PromoCode::get();
-
-    //     return view('Dashboard.PromoCodes.index', compact('promoCodes'));
-    // }
 
     public function create()
     {

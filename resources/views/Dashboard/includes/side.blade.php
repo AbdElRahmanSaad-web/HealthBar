@@ -127,9 +127,21 @@
         </li>
 
         <li>
-            <a class="menu-title text-capitalize" href="{{ route('admin.promoCodes.index') }}"><i
-                 class="fa-solid fa-gift" style="color: #6c757d;"></i>{{ __('words.PromoCodes') }}</a>
+            <a href="{{ route('admin.orders.index') }}">
+                <div class="parent-icon"><i class="fa-solid fa-store"></i>
+                </div>
+                <div class="menu-title text-capitalize">{{ __('words.orders') }}</div>
+            </a>
         </li>
+
+        <li>
+            <a href="{{ route('admin.promoCodes.index') }}">
+                <div class="parent-icon"><i class="fa-solid fa-gift"></i>
+                </div>
+                <div class="menu-title text-capitalize">{{ __('words.PromoCodes') }}</div>
+            </a>
+        </li>
+       
     </ul>
     <!--end navigation-->
 </div>

@@ -59,6 +59,8 @@ Route::prefix('admin')->name('admin.')->group( function () {
 
         //orders Routes
         Route::get('orders',[OrderController::class,'index'])->name('orders.index');
+        Route::get('orders/{id}',[OrderController::class,'find'])->name('orders.find');
+        Route::put('orders/{id}',[OrderController::class,'updateStatus'])->name('orders.status');
     });
     // Admin Guest Routes
     Route::middleware('guest:admin')->group( function () {

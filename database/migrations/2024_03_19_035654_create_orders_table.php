@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('address_id');
             $table->timestamp('order_date')->nullable();
-            $table->string('status')->default('pending');
+            $table->enum('status',['pending','in_progress','out_for_delivery','delivered'])->default('pending');
             $table->decimal('service_price')->nullable();
             $table->decimal('delivery_price')->nullable();
             $table->decimal('total_price')->nullable();

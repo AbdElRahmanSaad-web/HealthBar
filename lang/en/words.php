@@ -16,5 +16,6 @@ return [
     'action' => 'Action',
     'main_category' => 'Main Category',
     'PromoCodes' => 'Promo Codes',
+    'orders' => 'Orders',
 ];
 
